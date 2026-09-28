@@ -1,0 +1,8 @@
+name: astrbot_plugin_help_menu
+display_name: 帮助菜单
+desc: 自动收集已启用插件和指令，生成 HTML 图片菜单，支持 WebUI 编辑描述、排序和显示内容。
+short_desc: 可编辑的插件指令图片菜单
+version: 0.1.1
+author: huvz04
+repo: https://github.com/huvz04/astrbot_plugin_help_menu
+astrbot_version: ">=4.26.0"

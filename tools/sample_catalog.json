@@ -1,0 +1,35 @@
+[
+  {
+    "id": "astrbot_plugin_imas_birthday", "name": "偶像大师生日", "description": "陪伴每一次生日，也记录你喜欢的偶像。", "version": "示例", "author": "", "system": false,
+    "commands": [
+      {"id": "demo.birthday:0", "name": "今日生日", "usage": "今日生日", "aliases": ["生日"], "description": "查看今天过生日的偶像和声优，生成一张专属生日卡片。", "admin_only": false, "is_group": false, "manual": false},
+      {"id": "demo.tantou:0", "name": "加推", "usage": "加推 <角色名>", "aliases": [], "description": "登记你喜欢的角色，在生日当天收到提醒。", "admin_only": false, "is_group": false, "manual": false},
+      {"id": "demo.list:0", "name": "我的担当", "usage": "我的担当", "aliases": [], "description": "看看你的担当列表，以及距离下一次生日还有多久。", "admin_only": false, "is_group": false, "manual": false}
+    ]
+  },
+  {
+    "id": "astrbot_plugin_flight_watch", "name": "机票低价监测", "description": "为下一次出发，留意每一个好价格。", "version": "示例", "author": "", "system": false,
+    "commands": [
+      {"id": "demo.flight_list:0", "name": "flight list", "usage": "flight list", "aliases": [], "description": "查看当前会话绑定的机票监控任务。", "admin_only": false, "is_group": false, "manual": false},
+      {"id": "demo.flight_show:0", "name": "flight show", "usage": "flight show <task_id>", "aliases": [], "description": "获取指定航线的最新报价图片和购票链接。", "admin_only": false, "is_group": false, "manual": false},
+      {"id": "demo.flight_bind:0", "name": "flight bind", "usage": "flight bind", "aliases": [], "description": "绑定接收价格提醒的群聊或私聊。", "admin_only": true, "is_group": false, "manual": false}
+    ]
+  },
+  {
+    "id": "astrbot_plugin_toyoko_watch", "name": "东横 INN 空房", "description": "行程已定，剩下的交给空房提醒。", "version": "示例", "author": "", "system": false,
+    "commands": [
+      {"id": "demo.hotel:0", "name": "toyoko list", "usage": "toyoko list", "aliases": [], "description": "列出已订阅的酒店与入住日期。", "admin_only": false, "is_group": false, "manual": false},
+      {"id": "demo.hotel_check:0", "name": "toyoko check", "usage": "toyoko check <任务编号>", "aliases": [], "description": "立即检查一次空房状态。", "admin_only": false, "is_group": false, "manual": false}
+    ]
+  },
+  {
+    "id": "astrbot_plugin_help_menu", "name": "帮助菜单", "description": "不知道从哪里开始？来这里看看。", "version": "0.1.1", "author": "huvz04", "system": false,
+    "commands": [
+      {"id": "demo.menu:0", "name": "帮助", "usage": "帮助", "aliases": [], "description": "查看插件功能菜单。", "admin_only": false, "is_group": false, "manual": false}
+    ]
+  },
+  {"id": "astrbot_plugin_auto_reminder", "name": "日常提醒", "description": "按约定的时间，发送一条温柔的提醒。", "version": "示例", "author": "", "system": false, "commands": []},
+  {"id": "builtin_commands", "name": "系统指令", "description": "AstrBot 运行与会话管理。", "version": "", "author": "AstrBot", "system": true, "commands": [
+    {"id": "demo.sid:0", "name": "sid", "usage": "sid", "aliases": [], "description": "查看当前会话标识。", "admin_only": false, "is_group": false, "manual": false}
+  ]}
+]

@@ -1,0 +1,1 @@
+"""AstrBot help menu plugin."""

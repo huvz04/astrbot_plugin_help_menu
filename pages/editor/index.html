@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>帮助菜单 · 编辑器</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand"><span class="brand-mark">✳</span><div><span class="eyebrow">HELP MENU STUDIO</span><h1>帮助菜单</h1></div></div>
+    <div class="header-actions"><span id="save-status" role="status">正在连接…</span><button id="refresh" class="quiet" disabled>重新读取</button><button id="save" class="primary" disabled>保存菜单</button></div>
+  </header>
+  <div id="banner" class="banner" hidden></div>
+  <div class="workspace">
+    <aside class="sidebar">
+      <nav class="tabs" aria-label="编辑内容"><button data-tab="plugins" class="active" aria-selected="true">插件与指令</button><button data-tab="appearance" aria-selected="false">菜单外观</button></nav>
+      <section id="plugins-panel">
+        <div class="section-heading"><span>已加载插件</span><span id="plugin-count" class="count">0</span></div>
+        <label class="search-field"><span>⌕</span><input id="plugin-search" type="search" placeholder="搜索插件或指令" aria-label="搜索插件或指令"></label>
+        <div id="plugin-list" class="plugin-list"></div>
+        <p class="sidebar-hint">扫描已启用插件。修改菜单介绍不会改变插件本身的行为。</p>
+      </section>
+      <section id="appearance-panel" hidden>
+        <div class="section-heading">文字与样式</div>
+        <label class="field">菜单标题<input data-setting="title" maxlength="100"></label>
+        <label class="field">副标题<textarea data-setting="subtitle" rows="2" maxlength="400"></textarea></label>
+        <label class="field">页脚说明<textarea data-setting="footer" rows="2" maxlength="400"></textarea></label>
+        <div class="theme-options" role="group" aria-label="菜单主题"><button data-theme="sakura">樱花</button><button data-theme="paper">纸笺</button><button data-theme="dark">夜色</button></div>
+        <label class="field color-field">强调色<input data-setting="accent" type="color"></label>
+        <div class="field-row"><label class="field">图片宽度<input data-setting="width" type="number" min="720" max="1600" step="10"></label><label class="field">分栏数<select data-setting="columns"><option value="1">1 栏</option><option value="2">2 栏</option><option value="3">3 栏</option></select></label></div>
+        <label class="field">每页最多条目<input data-setting="page_size" type="number" min="4" max="40"></label>
+        <label class="field">指令前缀<input data-setting="prefix" maxlength="16" placeholder="留空：跟随会话配置"></label>
+        <div class="section-heading divider">显示内容</div>
+        <label class="check"><input data-setting="show_system" type="checkbox">显示系统插件</label>
+        <label class="check"><input data-setting="show_admin" type="checkbox">向管理员显示管理指令</label>
+        <label class="check"><input data-setting="include_empty" type="checkbox">显示没有标准指令的插件</label>
+        <label class="check"><input data-setting="show_aliases" type="checkbox">显示指令别名</label>
+        <div class="backup-actions"><button id="export">导出配置</button><button id="import">导入配置</button><input id="import-file" type="file" accept="application/json,.json" hidden></div>
+        <p class="sidebar-hint">普通用户始终看不到管理指令。预览按全部已加载插件生成，聊天菜单按当前会话过滤。</p>
+      </section>
+    </aside>
+    <section id="detail" class="detail-panel"><div class="placeholder">正在读取插件与指令…</div></section>
+    <section class="preview-panel">
+      <div class="preview-header"><div><span class="eyebrow">LIVE PREVIEW</span><h2>聊天菜单预览</h2></div><button id="screenshot" disabled>生成图片</button></div>
+      <div class="preview-tools"><input id="preview-search" type="search" placeholder="测试菜单搜索" aria-label="测试菜单搜索"><label class="check"><input id="preview-admin" type="checkbox">管理员视角</label></div>
+      <div class="preview-pagination"><span id="preview-stats">尚未生成</span><div><button id="prev-page" aria-label="上一页" disabled>‹</button><span id="page-label">1 / 1</span><button id="next-page" aria-label="下一页" disabled>›</button></div></div>
+      <div id="preview-viewport" class="preview-viewport"><div id="preview-sizing"><iframe id="preview" title="菜单 HTML 预览" sandbox="allow-same-origin"></iframe></div></div>
+      <div id="image-output" class="image-output" hidden><div class="image-heading"><strong>实际截图</strong><button id="close-image" class="quiet">收起</button></div><img id="rendered-image" alt="生成的菜单截图"><a id="download-image" download="help-menu.png">下载这张图片</a></div>
+    </section>
+  </div>
+  <div id="toast" class="toast" role="alert" hidden></div>
+  <dialog id="confirm-dialog"><h2 id="confirm-title">确认操作</h2><p id="confirm-message"></p><div class="dialog-actions"><button id="confirm-cancel">取消</button><button id="confirm-ok" class="primary">继续</button></div></dialog>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

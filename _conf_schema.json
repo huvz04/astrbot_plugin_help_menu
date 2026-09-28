@@ -1,0 +1,19 @@
+{
+  "render_timeout": {
+    "description": "单张菜单截图超时（秒）",
+    "type": "int",
+    "default": 60,
+    "hint": "使用 AstrBot 当前配置的 HTML 文转图服务；截图失败会发送文字菜单。"
+  },
+  "max_pages_per_request": {
+    "description": "单次最多发送的菜单页数",
+    "type": "int",
+    "default": 4,
+    "hint": "菜单超过此页数时，使用 /帮助 页码 查看剩余页面。"
+  },
+  "cache_seconds": {
+    "description": "相同菜单截图缓存时间（秒）",
+    "type": "int",
+    "default": 300
+  }
+}
